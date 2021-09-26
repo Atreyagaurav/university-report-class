@@ -1,0 +1,7 @@
+* University Report LaTeX class
+  This is work in progress though it does compile for now.
+
+  It's a class for university submission format with a simple coverpage.
+
+  I'll add a sample report later.
+  
