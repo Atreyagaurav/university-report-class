@@ -3,5 +3,4 @@
 
   It's a class for university submission format with a simple coverpage.
 
-  I'll add a sample report later.
-  
+  The sample-report.tex shows different functionality of the class, not that it has many. 

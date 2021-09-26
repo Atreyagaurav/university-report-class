@@ -185,6 +185,7 @@
 \newcommand{\SubmissionName}[1]{\def\@SubmissionName{#1}}
 \newcommand{\Author}[1]{\def\@Author{#1}}
 \newcommand{\Mnumber}[1]{\def\@Mnumber{#1}}
+\newcommand{\Keywords}[1]{\def\@Keywords{#1}}
 
 % ---------------------------------------------------------------------
 \usetikzlibrary{calc}
@@ -250,14 +251,6 @@
 
 
 
-%----------------------------------------------------------------------
-%	MISC. Settings
-%----------------------------------------------------------------------  
-\tolerance=1
-\emergencystretch=\maxdimen
-\hyphenpenalty=10000
-\hbadness=10000
-
 
 
 % Draft Watermark
@@ -283,3 +276,12 @@
 % Defining these as defaults for myself. Change it for other universities.
 \UniversityName{University of Cincinnati}
 \UniversityLogoImageFile{uc-logo.png}
+
+
+%----------------------------------------------------------------------
+%	MISC. Settings
+%----------------------------------------------------------------------  
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
