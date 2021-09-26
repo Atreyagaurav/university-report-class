@@ -3,4 +3,42 @@
 
   It's a class for university submission format with a simple coverpage.
 
-  The sample-report.tex shows different functionality of the class, not that it has many. 
+* Installation
+  To make this available everywhere in your computer you can add these to your styles folder. Refer to [[https://tex.stackexchange.com/questions/1137/where-do-i-place-my-own-sty-or-cls-files-to-make-them-available-to-all-my-te][this link]] to know where to place them.
+
+  I used these commands to make a hard link to the directory where ~pdflatex~ scans for the document class.
+#+begin_src shell
+ln unisubmission.cls ~/texmf/tex/latex/commonstuffs/
+ln uc-logo.png ~/texmf/tex/latex/commonstuffs/
+#+end_src
+
+* How to use
+  Once it is installed (or just place the files in the same directory as your latex file), you can just use ~unisubmission~ documentclass instead of your other ones. There are some things you need to define, the preamble of the LaTeX will look like this:
+
+  #+begin_src latex
+\documentclass[titlepage,12pt]{unisubmission}
+
+\usepackage{lipsum}
+
+\ClassCode{CODE XXXXX}
+\ClassName{The Subject}
+\ActivityType{Lab}
+\SubmissionType{Report}
+\SubmissionNumber{1}
+\SubmissionName{Title of your Report}
+\Author{Your Name}
+\Mnumber{MXXXXXXXX}
+\Keywords{Report,Lab,University}
+
+\date{\today}
+#+end_src
+
+After that you can just write your document however you want, use ~\maketitle~ command to make the title page.
+
+For more details refer the sample-report.tex file and pdf generated from that file.
+
+After your latex document is ready just compile it with the pdflatex command.
+
+#+begin_src shell
+pdflatex --synctex=1 sample-report.tex
+#+end_src
