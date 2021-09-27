@@ -1,0 +1,57 @@
+\documentclass[titlepage,12pt]{unisubmission}
+
+\usepackage{lipsum}
+
+\ClassCode{CODE XXXXX}
+\ClassName{The Subject}
+\ActivityType{Lab}
+\SubmissionType{Report}
+\SubmissionNumber{1}
+\SubmissionName{Title of your Report}
+\Author{Your Name}
+\Mnumber{MXXXXXXXX}
+\Keywords{Report,Lab,University}
+
+\date{\today}
+
+\setlength{\belowcaptionskip}{-\baselineskip} %to remove extra space after a figure.
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+\label{sec:intro}
+
+\subsection{Introduction to Something}
+\label{subsec:intro-sth}
+
+\lipsum[2-4]
+
+\subsection{Another thing}
+\label{subsec:another-thing}
+\lipsum[4]
+
+\subsection{Figures}
+\label{subsec:figures}
+
+Figure \ref{fig:testfig} shows something that you want mentioned, and you can reference it. And refer to the \LaTeX syntax below for how to add a figure, you can remove the \backt{[H]} part from the syntax if you want the \LaTeX to place the figure automatically where it's suitable instead of holding it in place.
+
+% the \backt is similar to backtick in markdown but with underline.
+
+\begin{figure}[H]\centering
+  \fbox{\includegraphics[width=0.95\linewidth]{testfig}}
+  \caption{You can add the Caption here}
+  \label{fig:testfig}
+\end{figure}
+
+Describe the figure if you want.
+
+\section{Discussions and Conclusions}
+\label{sec:conclusions}
+
+
+\lipsum[4]
+
+
+
+\end{document}
