@@ -9,8 +9,11 @@
   I used these commands to make a hard link to the directory where ~pdflatex~ scans for the document class.
 #+begin_src shell
 ln unisubmission.cls ~/texmf/tex/latex/commonstuffs/
+ln unihw.cls ~/texmf/tex/latex/commonstuffs/
 ln uc-logo.png ~/texmf/tex/latex/commonstuffs/
 #+end_src
+
+#+RESULTS:
 
 * How to use
   Once it is installed (or just place the files in the same directory as your latex file), you can just use ~unisubmission~ documentclass instead of your other ones. There are some things you need to define, the preamble of the LaTeX will look like this:

@@ -9,7 +9,7 @@
 
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{NJCE}[07/12/2019, v1.0]
+\ProvidesClass{unisubmission}[10/10/2021, v1.1]
 \RequirePackage{ifthen}
 \RequirePackage{calc}
 \AtEndOfClass{\RequirePackage{microtype}}
