@@ -40,3 +40,16 @@
 }%
 }}
 }%
+
+\titleformat{\section}
+  {\color{color1}\sffamily\bfseries}
+  {}
+  {0em}
+  {\colorbox{color2!10}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\arabic{section}. #1}}}
+  []
+\titleformat{name=\section,numberless}
+  {\color{color1}\sffamily\bfseries}
+  {}
+  {0em}
+  {\colorbox{color2!10}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\centering#1}}}
+  []  
