@@ -16,7 +16,7 @@
 % Headers
 \chead{}%
 
-\rhead{\large\thepage}
+\rhead{P-\large\thepage}
 \lhead{\@Author\xspace(\@Mnumber)}
 % Footers
 \rfoot{}%

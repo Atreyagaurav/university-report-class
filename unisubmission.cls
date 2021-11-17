@@ -30,7 +30,6 @@
 %	VARIOUS USEFUL PACKAGES
 %----------------------------------------------------------------------
 
-\RequirePackage[utf8]{inputenc}
 \RequirePackage{amsmath,amsfonts,amssymb}
 \RequirePackage{graphicx,xcolor}
 \RequirePackage[english]{babel}
@@ -42,7 +41,8 @@
 \RequirePackage{xspace}
 \RequirePackage{csvsimple}
 \RequirePackage{numprint}
-
+\RequirePackage[mathletters]{ucs}
+\RequirePackage[utf8x]{inputenc}
 
 \definecolor{color1}{RGB}{10,10,50} % Color of the article title and sections
 \definecolor{color2}{RGB}{50,50,10} % Color of the boxes behind the abstract and headings	
