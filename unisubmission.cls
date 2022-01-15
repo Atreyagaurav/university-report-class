@@ -30,7 +30,8 @@
 %	VARIOUS USEFUL PACKAGES
 %----------------------------------------------------------------------
 
-\RequirePackage{amsmath,amsfonts,amssymb}
+\RequirePackage[fleqn]{amsmath}
+\RequirePackage{amsfonts,amssymb}
 \RequirePackage{graphicx,xcolor}
 \RequirePackage[english]{babel}
 \RequirePackage{booktabs}
@@ -43,6 +44,9 @@
 \RequirePackage{numprint}
 \RequirePackage[mathletters]{ucs}
 \RequirePackage[utf8x]{inputenc}
+\RequirePackage{menukeys}       %needs to be loaded after inputenc according to docs
+\RequirePackage{verbatim}
+\RequirePackage{minted}
 
 \definecolor{color1}{RGB}{10,10,50} % Color of the article title and sections
 \definecolor{color2}{RGB}{50,50,10} % Color of the boxes behind the abstract and headings	
@@ -247,7 +251,7 @@
 \RequirePackage[pdfusetitle]{hyperref} % Required for hyperlinks
 \hypersetup{hidelinks,colorlinks,breaklinks=true,urlcolor=color2,citecolor=color1,linkcolor=color1,bookmarksopen=false,pdftitle={Title},pdfauthor={Author}}
 
-\graphicspath{{./graphics/}} %Folder Containing the graphics files for /includegraphics{...}
+\graphicspath{{./graphics/}{./images/}} %Folder Containing the graphics files for /includegraphics{...}
 
 
 
@@ -272,6 +276,26 @@
 }{}
 
 %\newwatermark*[allpages,color=red!50,angle=45,scale=4,xpos=0,ypos=0]{DRAFT}
+
+
+% For writing codes
+\definecolor{codebg}{rgb}{0.90,1,0.90}
+\definecolor{outputbg}{rgb}{0.88,0.88,1}
+
+\setminted[r]{
+  bgcolor=codebg,
+  breaklines=true,
+  linenos,
+  firstnumber=last}
+
+\setminted[rconsole]{
+  bgcolor=outputbg,
+  breaklines=true,
+}
+
+\usemintedstyle{emacs}
+
+
 
 % Defining these as defaults for myself. Change it for other universities.
 \UniversityName{University of Cincinnati}
