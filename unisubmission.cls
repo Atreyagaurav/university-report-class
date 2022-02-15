@@ -35,6 +35,7 @@
 \RequirePackage{graphicx,xcolor}
 \RequirePackage[english]{babel}
 \RequirePackage{booktabs}
+\RequirePackage{parskip}
 \RequirePackage{flushend}
 \RequirePackage{tikz}
 \RequirePackage{float}
@@ -47,6 +48,8 @@
 \RequirePackage{menukeys}       %needs to be loaded after inputenc according to docs
 \RequirePackage{verbatim}
 \RequirePackage{minted}
+
+\RequirePackage[pdfusetitle]{hyperref} % Required for hyperlinks
 
 \definecolor{color1}{RGB}{10,10,50} % Color of the article title and sections
 \definecolor{color2}{RGB}{50,50,10} % Color of the boxes behind the abstract and headings	
@@ -212,7 +215,8 @@
       {\large \@ClassCode : \@ClassName}
       
       \vspace{.6cm}
-      {\Huge \@ActivityType\xspace \@SubmissionNumber: \@SubmissionName}
+      % {\Huge \@ActivityType\xspace \@SubmissionNumber: \@SubmissionName}
+      {\Huge \@SubmissionName}
 
       \vspace{.4cm}
       {\huge \@ActivityType\xspace \@SubmissionType}
@@ -248,8 +252,6 @@
 \fontsize{10}{10.5}\selectfont%
 }
 
-\RequirePackage[pdfusetitle]{hyperref} % Required for hyperlinks
-\hypersetup{hidelinks,colorlinks,breaklinks=true,urlcolor=color2,citecolor=color1,linkcolor=color1,bookmarksopen=false,pdftitle={Title},pdfauthor={Author}}
 
 \graphicspath{{./graphics/}{./images/}} %Folder Containing the graphics files for /includegraphics{...}
 
@@ -282,21 +284,37 @@
 \definecolor{codebg}{rgb}{0.90,1,0.90}
 \definecolor{outputbg}{rgb}{0.88,0.88,1}
 
+\setminted[python]{
+  bgcolor=codebg,
+  breaklines=true,
+  linenos,
+  frame         = single                   ,
+  framesep      = 1mm                      ,
+  label         = \textrm{\textbf{code: python}} ,
+  labelposition = topline}
+
 \setminted[r]{
   bgcolor=codebg,
   breaklines=true,
   linenos,
-  firstnumber=last}
+  frame         = single                   ,
+  framesep      = 1mm                      ,
+  label         = \textrm{\textbf{code: r}},
+  labelposition = topline}
 
-\setminted[rconsole]{
+\setminted[text]{
   bgcolor=outputbg,
   breaklines=true,
+  frame         = single                   ,
+  framesep      = 1mm                      ,
+  label         = \textrm{\textbf{output}} ,
+  labelposition = topline
 }
 
 \usemintedstyle{emacs}
 
 
-
+\hypersetup{hidelinks,colorlinks,breaklinks=true,urlcolor=color2,citecolor=color1,linkcolor=color1,bookmarksopen=false}
 % Defining these as defaults for myself. Change it for other universities.
 \UniversityName{University of Cincinnati}
 \UniversityLogoImageFile{uc-logo.png}
