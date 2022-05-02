@@ -9,7 +9,7 @@
 
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{unisubmission}[10/10/2021, v1.1]
+\ProvidesClass{unisubmission}[10/10/2021, v1.2]
 \RequirePackage{ifthen}
 \RequirePackage{calc}
 \AtEndOfClass{\RequirePackage{microtype}}
@@ -282,12 +282,23 @@
 
 % For writing codes
 \definecolor{codebg}{rgb}{0.90,1,0.90}
+\definecolor{shellbg}{rgb}{1,.9,0.9}
 \definecolor{outputbg}{rgb}{0.88,0.88,1}
+
+\setminted[bash]{
+  bgcolor=shellbg,
+  breaklines=true,
+  linenos,
+  frame         = single                   ,
+  framesep      = 1mm                      ,
+  label         = \textrm{\textbf{command: shell}} ,
+  labelposition = topline}
 
 \setminted[python]{
   bgcolor=codebg,
   breaklines=true,
   linenos,
+  texcl,
   frame         = single                   ,
   framesep      = 1mm                      ,
   label         = \textrm{\textbf{code: python}} ,
@@ -302,12 +313,46 @@
   label         = \textrm{\textbf{code: r}},
   labelposition = topline}
 
+\setminted[common-lisp]{
+  bgcolor=codebg,
+  breaklines=true,
+  linenos,
+  frame         = single                   ,
+  framesep      = 1mm                      ,
+  label         = \textrm{\textbf{code: lisp}},
+  labelposition = topline}
+
 \setminted[text]{
   bgcolor=outputbg,
   breaklines=true,
   frame         = single                   ,
   framesep      = 1mm                      ,
   label         = \textrm{\textbf{output}} ,
+  labelposition = topline
+}
+
+
+
+\setminted[julia]{
+  bgcolor=codebg,
+  breaklines=true,
+  linenos,
+  frame         = single                   ,
+  framesep      = 1mm                      ,
+  label         = \textrm{\textbf{code: julia}},
+  labelposition = topline}
+
+% newminted makes an alias of julia code as an environment juliacode,
+% you can use org babel to wrap the output in juliaout and the output
+% will use this environment instead. I think it might be better than
+% using text src.
+\newminted[juliaout]{julia}{
+  bgcolor=outputbg,
+  breaklines=true,
+  frame         = single                   ,
+  framesep      = 1mm                      ,
+  linenos,
+  label         = \textrm{\textbf{output: julia}} ,
   labelposition = topline
 }
 
